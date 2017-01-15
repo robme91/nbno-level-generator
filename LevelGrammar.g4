@@ -2,7 +2,6 @@ grammar LevelGrammar;
 
 file : levelName Linebreak levelConfigs Linebreak player Linebreak enemies Linebreak map EOF;
 
-//TODO alle Values klein schreiben, und alle Ids groß, damit entsprechend im listener die Methoden vorhanden sind
 // eine kleingeschriebene Definition erzeugt eine Methode im BaseListener, eine Große nicht
 
 // helper definitions
@@ -19,48 +18,55 @@ AttributeSeparator: ',';
 
 
 //name of the generating level
-levelName: LevelNameId LevelNameValue;
+levelName: LevelNameId nameValue;
 LevelNameId: 'levelName:';
-LevelNameValue: Alphabet;
+nameValue: Alphabet;
 
 //the level configuration like playing time or music etc.
 levelConfigs: ConfigsId ObjectBeginn configs ObjectEnd ;
 ConfigsId: 'levelConfiguration';
-configs:  LevelTimeId LevelTimeValue;
+configs:  LevelTimeId levelTimeValue;
 LevelTimeId:'levelTime:';
-LevelTimeValue: Digits;
+levelTimeValue: Digits;
 
 //the player and its attributes
 player: PlayerId ObjectBeginn playerAttributes ObjectEnd ;
 PlayerId: 'player';
-playerAttributes:  speed AttributeSeparator DrinkSpeed;
+playerAttributes:  speed AttributeSeparator drinkSpeed;
 speed: SpeedId speedValue;
 SpeedId: 'speed:';
 speedValue: Digits;
-DrinkSpeed: DrinkSpeedId DrinkSpeedValue;
+drinkSpeed: DrinkSpeedId drinkSpeedValue;
 DrinkSpeedId: 'drinkSpeed:';
-DrinkSpeedValue: Digits;
+drinkSpeedValue: Digits;
 
 
 //enemies and their attributes
-enemies:'enemies {' EnemyAttribute '}';
-EnemyAttribute: AttributeName AttributeSeparator [Linebreak] Speed AttributeSeparator [Linebreak]
-                 AttributeAttackTarget AttributeSeparator [Linebreak] AttributeAttackValue;
-AttributeName:'name:' Char (Char)*;
-MapRepresentation: 'mapRepresentation:' MapRepresentationValue;
-MapRepresentationValue: [1-9];
-AttributeAttackTarget: 'attack-target:' AttackTargetValue;
+enemies:EnemiesId ObjectBeginn enemyAttribute ObjectEnd;
+EnemiesId: 'enemies';
+enemyAttribute: enemyName AttributeSeparator mapRepresentation AttributeSeparator speed AttributeSeparator
+                 attackTarget AttributeSeparator attackValue;
+enemyName: NameId nameValue;
+NameId: 'name:';
+mapRepresentation: MapRepresentationId mapRepresentationValue;
+MapRepresentationId: 'mapRepresentation:';
+mapRepresentationValue: Digit;
+attackTarget: AttackTargetId AttackTargetValue;
+AttackTargetId: 'attack-target:' ;
 AttackTargetValue:'drink' | 'time' | 'playerSpeed';
-AttributeAttackValue: 'attackValue:' Digit Digit;
+attackValue: AttackValueId attackValueValue;
+AttackValueId:'attackValue:';
+attackValueValue: Digits;
 
 //the map of the level includes the map objects play and enemy start positions
 // check when parsing that maps have always the same size (800*640 px) while each mapValue is a 32*32px block.
 // so there must be 20 rows and each row got 25 mapvalues
-map: 'map {' MapSetUp '}';
-MapSetUp: Row (Row)*;
-Row: MapValue* Linebreak;
-MapValue: Street | Building | Character;
-Character: 'X' | MapRepresentation;
+map: MapId ObjectBeginn mapSetUp ObjectEnd;
+MapId: 'map';
+mapSetUp: row (row)*;
+row: mapValue (mapValue)* Linebreak;
+mapValue: Street | Building | Character;
+Character: 'X' | Digit; // X is player spawn, the digit is for the enemy class
 Building: 'H' | Spaeti;   //H is for House
 Spaeti: '<' | '>' | '^' | 'V'; // symbols in which direction the spaeti opens
 Street: 'S' | 'P'; //S is for street and p is for park
