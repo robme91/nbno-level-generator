@@ -1,4 +1,5 @@
-// Generated from C:/Users/Robin/beuth/master/se/semester_projekt/repo/nbno-level-generator\LevelGrammar.g4 by ANTLR 4.5.3
+// Generated from C:/Users/Robin/beuth/master/se/semester_projekt/repo/nbno-level-generator/src/grammar\LevelGrammar.g4 by ANTLR 4.5.3
+package grammar;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -70,6 +71,18 @@ public class LevelGrammarBaseListener implements LevelGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitConfigs(LevelGrammarParser.ConfigsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLevelTime(LevelGrammarParser.LevelTimeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLevelTime(LevelGrammarParser.LevelTimeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -159,6 +172,30 @@ public class LevelGrammarBaseListener implements LevelGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterBeerLevel(LevelGrammarParser.BeerLevelContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBeerLevel(LevelGrammarParser.BeerLevelContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBeerLevelValue(LevelGrammarParser.BeerLevelValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBeerLevelValue(LevelGrammarParser.BeerLevelValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterEnemies(LevelGrammarParser.EnemiesContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -166,6 +203,30 @@ public class LevelGrammarBaseListener implements LevelGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitEnemies(LevelGrammarParser.EnemiesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEnemy(LevelGrammarParser.EnemyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEnemy(LevelGrammarParser.EnemyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMapRepresentation(LevelGrammarParser.MapRepresentationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMapRepresentation(LevelGrammarParser.MapRepresentationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -195,25 +256,13 @@ public class LevelGrammarBaseListener implements LevelGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMapRepresentation(LevelGrammarParser.MapRepresentationContext ctx) { }
+	@Override public void enterEnemyNameValue(LevelGrammarParser.EnemyNameValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMapRepresentation(LevelGrammarParser.MapRepresentationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterMapRepresentationValue(LevelGrammarParser.MapRepresentationValueContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMapRepresentationValue(LevelGrammarParser.MapRepresentationValueContext ctx) { }
+	@Override public void exitEnemyNameValue(LevelGrammarParser.EnemyNameValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -231,25 +280,85 @@ public class LevelGrammarBaseListener implements LevelGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAttackValue(LevelGrammarParser.AttackValueContext ctx) { }
+	@Override public void enterAttackTargetValue(LevelGrammarParser.AttackTargetValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAttackValue(LevelGrammarParser.AttackValueContext ctx) { }
+	@Override public void exitAttackTargetValue(LevelGrammarParser.AttackTargetValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAttackValueValue(LevelGrammarParser.AttackValueValueContext ctx) { }
+	@Override public void enterDamage(LevelGrammarParser.DamageContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAttackValueValue(LevelGrammarParser.AttackValueValueContext ctx) { }
+	@Override public void exitDamage(LevelGrammarParser.DamageContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDamageValue(LevelGrammarParser.DamageValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDamageValue(LevelGrammarParser.DamageValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterKi(LevelGrammarParser.KiContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitKi(LevelGrammarParser.KiContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterKiValue(LevelGrammarParser.KiValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitKiValue(LevelGrammarParser.KiValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVisualRange(LevelGrammarParser.VisualRangeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVisualRange(LevelGrammarParser.VisualRangeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIntelligence(LevelGrammarParser.IntelligenceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIntelligence(LevelGrammarParser.IntelligenceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -267,13 +376,13 @@ public class LevelGrammarBaseListener implements LevelGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMapSetUp(LevelGrammarParser.MapSetUpContext ctx) { }
+	@Override public void enterMapValue(LevelGrammarParser.MapValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMapSetUp(LevelGrammarParser.MapSetUpContext ctx) { }
+	@Override public void exitMapValue(LevelGrammarParser.MapValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -291,13 +400,37 @@ public class LevelGrammarBaseListener implements LevelGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMapValue(LevelGrammarParser.MapValueContext ctx) { }
+	@Override public void enterBlock(LevelGrammarParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMapValue(LevelGrammarParser.MapValueContext ctx) { }
+	@Override public void exitBlock(LevelGrammarParser.BlockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBuilding(LevelGrammarParser.BuildingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBuilding(LevelGrammarParser.BuildingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCharacter(LevelGrammarParser.CharacterContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCharacter(LevelGrammarParser.CharacterContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

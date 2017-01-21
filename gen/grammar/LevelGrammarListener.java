@@ -1,4 +1,5 @@
-// Generated from C:/Users/Robin/beuth/master/se/semester_projekt/repo/nbno-level-generator\LevelGrammar.g4 by ANTLR 4.5.3
+// Generated from C:/Users/Robin/beuth/master/se/semester_projekt/repo/nbno-level-generator/src/grammar\LevelGrammar.g4 by ANTLR 4.5.3
+package grammar;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -56,6 +57,16 @@ public interface LevelGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConfigs(LevelGrammarParser.ConfigsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#levelTime}.
+	 * @param ctx the parse tree
+	 */
+	void enterLevelTime(LevelGrammarParser.LevelTimeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#levelTime}.
+	 * @param ctx the parse tree
+	 */
+	void exitLevelTime(LevelGrammarParser.LevelTimeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LevelGrammarParser#levelTimeValue}.
 	 * @param ctx the parse tree
@@ -127,6 +138,26 @@ public interface LevelGrammarListener extends ParseTreeListener {
 	 */
 	void exitDrinkSpeedValue(LevelGrammarParser.DrinkSpeedValueContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#beerLevel}.
+	 * @param ctx the parse tree
+	 */
+	void enterBeerLevel(LevelGrammarParser.BeerLevelContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#beerLevel}.
+	 * @param ctx the parse tree
+	 */
+	void exitBeerLevel(LevelGrammarParser.BeerLevelContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#beerLevelValue}.
+	 * @param ctx the parse tree
+	 */
+	void enterBeerLevelValue(LevelGrammarParser.BeerLevelValueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#beerLevelValue}.
+	 * @param ctx the parse tree
+	 */
+	void exitBeerLevelValue(LevelGrammarParser.BeerLevelValueContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LevelGrammarParser#enemies}.
 	 * @param ctx the parse tree
 	 */
@@ -136,6 +167,26 @@ public interface LevelGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitEnemies(LevelGrammarParser.EnemiesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#enemy}.
+	 * @param ctx the parse tree
+	 */
+	void enterEnemy(LevelGrammarParser.EnemyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#enemy}.
+	 * @param ctx the parse tree
+	 */
+	void exitEnemy(LevelGrammarParser.EnemyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#mapRepresentation}.
+	 * @param ctx the parse tree
+	 */
+	void enterMapRepresentation(LevelGrammarParser.MapRepresentationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#mapRepresentation}.
+	 * @param ctx the parse tree
+	 */
+	void exitMapRepresentation(LevelGrammarParser.MapRepresentationContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LevelGrammarParser#enemyAttribute}.
 	 * @param ctx the parse tree
@@ -157,25 +208,15 @@ public interface LevelGrammarListener extends ParseTreeListener {
 	 */
 	void exitEnemyName(LevelGrammarParser.EnemyNameContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LevelGrammarParser#mapRepresentation}.
+	 * Enter a parse tree produced by {@link LevelGrammarParser#enemyNameValue}.
 	 * @param ctx the parse tree
 	 */
-	void enterMapRepresentation(LevelGrammarParser.MapRepresentationContext ctx);
+	void enterEnemyNameValue(LevelGrammarParser.EnemyNameValueContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LevelGrammarParser#mapRepresentation}.
+	 * Exit a parse tree produced by {@link LevelGrammarParser#enemyNameValue}.
 	 * @param ctx the parse tree
 	 */
-	void exitMapRepresentation(LevelGrammarParser.MapRepresentationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link LevelGrammarParser#mapRepresentationValue}.
-	 * @param ctx the parse tree
-	 */
-	void enterMapRepresentationValue(LevelGrammarParser.MapRepresentationValueContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LevelGrammarParser#mapRepresentationValue}.
-	 * @param ctx the parse tree
-	 */
-	void exitMapRepresentationValue(LevelGrammarParser.MapRepresentationValueContext ctx);
+	void exitEnemyNameValue(LevelGrammarParser.EnemyNameValueContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LevelGrammarParser#attackTarget}.
 	 * @param ctx the parse tree
@@ -187,25 +228,75 @@ public interface LevelGrammarListener extends ParseTreeListener {
 	 */
 	void exitAttackTarget(LevelGrammarParser.AttackTargetContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LevelGrammarParser#attackValue}.
+	 * Enter a parse tree produced by {@link LevelGrammarParser#attackTargetValue}.
 	 * @param ctx the parse tree
 	 */
-	void enterAttackValue(LevelGrammarParser.AttackValueContext ctx);
+	void enterAttackTargetValue(LevelGrammarParser.AttackTargetValueContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LevelGrammarParser#attackValue}.
+	 * Exit a parse tree produced by {@link LevelGrammarParser#attackTargetValue}.
 	 * @param ctx the parse tree
 	 */
-	void exitAttackValue(LevelGrammarParser.AttackValueContext ctx);
+	void exitAttackTargetValue(LevelGrammarParser.AttackTargetValueContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LevelGrammarParser#attackValueValue}.
+	 * Enter a parse tree produced by {@link LevelGrammarParser#damage}.
 	 * @param ctx the parse tree
 	 */
-	void enterAttackValueValue(LevelGrammarParser.AttackValueValueContext ctx);
+	void enterDamage(LevelGrammarParser.DamageContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LevelGrammarParser#attackValueValue}.
+	 * Exit a parse tree produced by {@link LevelGrammarParser#damage}.
 	 * @param ctx the parse tree
 	 */
-	void exitAttackValueValue(LevelGrammarParser.AttackValueValueContext ctx);
+	void exitDamage(LevelGrammarParser.DamageContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#damageValue}.
+	 * @param ctx the parse tree
+	 */
+	void enterDamageValue(LevelGrammarParser.DamageValueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#damageValue}.
+	 * @param ctx the parse tree
+	 */
+	void exitDamageValue(LevelGrammarParser.DamageValueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#ki}.
+	 * @param ctx the parse tree
+	 */
+	void enterKi(LevelGrammarParser.KiContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#ki}.
+	 * @param ctx the parse tree
+	 */
+	void exitKi(LevelGrammarParser.KiContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#kiValue}.
+	 * @param ctx the parse tree
+	 */
+	void enterKiValue(LevelGrammarParser.KiValueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#kiValue}.
+	 * @param ctx the parse tree
+	 */
+	void exitKiValue(LevelGrammarParser.KiValueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#visualRange}.
+	 * @param ctx the parse tree
+	 */
+	void enterVisualRange(LevelGrammarParser.VisualRangeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#visualRange}.
+	 * @param ctx the parse tree
+	 */
+	void exitVisualRange(LevelGrammarParser.VisualRangeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#intelligence}.
+	 * @param ctx the parse tree
+	 */
+	void enterIntelligence(LevelGrammarParser.IntelligenceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#intelligence}.
+	 * @param ctx the parse tree
+	 */
+	void exitIntelligence(LevelGrammarParser.IntelligenceContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LevelGrammarParser#map}.
 	 * @param ctx the parse tree
@@ -217,15 +308,15 @@ public interface LevelGrammarListener extends ParseTreeListener {
 	 */
 	void exitMap(LevelGrammarParser.MapContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LevelGrammarParser#mapSetUp}.
+	 * Enter a parse tree produced by {@link LevelGrammarParser#mapValue}.
 	 * @param ctx the parse tree
 	 */
-	void enterMapSetUp(LevelGrammarParser.MapSetUpContext ctx);
+	void enterMapValue(LevelGrammarParser.MapValueContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LevelGrammarParser#mapSetUp}.
+	 * Exit a parse tree produced by {@link LevelGrammarParser#mapValue}.
 	 * @param ctx the parse tree
 	 */
-	void exitMapSetUp(LevelGrammarParser.MapSetUpContext ctx);
+	void exitMapValue(LevelGrammarParser.MapValueContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LevelGrammarParser#row}.
 	 * @param ctx the parse tree
@@ -237,13 +328,33 @@ public interface LevelGrammarListener extends ParseTreeListener {
 	 */
 	void exitRow(LevelGrammarParser.RowContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LevelGrammarParser#mapValue}.
+	 * Enter a parse tree produced by {@link LevelGrammarParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void enterMapValue(LevelGrammarParser.MapValueContext ctx);
+	void enterBlock(LevelGrammarParser.BlockContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LevelGrammarParser#mapValue}.
+	 * Exit a parse tree produced by {@link LevelGrammarParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void exitMapValue(LevelGrammarParser.MapValueContext ctx);
+	void exitBlock(LevelGrammarParser.BlockContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#building}.
+	 * @param ctx the parse tree
+	 */
+	void enterBuilding(LevelGrammarParser.BuildingContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#building}.
+	 * @param ctx the parse tree
+	 */
+	void exitBuilding(LevelGrammarParser.BuildingContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LevelGrammarParser#character}.
+	 * @param ctx the parse tree
+	 */
+	void enterCharacter(LevelGrammarParser.CharacterContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LevelGrammarParser#character}.
+	 * @param ctx the parse tree
+	 */
+	void exitCharacter(LevelGrammarParser.CharacterContext ctx);
 }

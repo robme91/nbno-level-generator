@@ -1,0 +1,47 @@
+levelName: TestLevel
+levelConfiguration {
+    levelTime: 60
+}
+player {
+    speed: 2,
+    drinkSpeed: 4,
+    beerLevel: 100
+}
+enemies {
+    1 {
+        name: Schnorrer,
+        speed: 1,
+        attackTarget: drink,
+        damage: 10,
+        ki: (10|30)
+    },
+    2 {
+        name: Polizist,
+        speed: 2,
+        attackTarget: playerSpeed,
+        damage: 20,
+        ki: (30|40)
+    }
+}
+map {
+    H,H,H,H,H,H,H,H,H,H,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,S,S,1,S,S,S,S,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,H,H,H,S,S,S,S,S,S,S,S
+    H,H,^,H,H,H,S,S,S,H,S,S,S,S,H,H,H,S,S,S,S,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,H,H,H,S,S,S,S,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,H,H,H,S,S,S,S,S,S,S,S
+    S,S,1,S,S,S,S,S,S,H,S,S,S,S,S,S,S,S,S,S,S,S,S,2,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,H,H,S,S,S,S,H,H,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,S,S,S,S,S,S,H,S,S,S,S
+    S,S,S,S,S,S,S,S,S,<,S,S,S,S,S,S,S,S,S,S,H,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,S,S,S,S,S,S,H,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,S,S,S,S,S,S,H,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,S,S,S,S,S,S,H,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+    S,S,S,S,S,S,S,S,S,H,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+    S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+    S,S,S,S,S,S,S,S,S,S,S,X,S,S,S,S,S,S,S,S,S,S,S,S,S
+}
