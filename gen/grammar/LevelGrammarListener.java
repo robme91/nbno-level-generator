@@ -28,15 +28,15 @@ public interface LevelGrammarListener extends ParseTreeListener {
 	 */
 	void exitLevelName(LevelGrammarParser.LevelNameContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LevelGrammarParser#nameValue}.
+	 * Enter a parse tree produced by {@link LevelGrammarParser#levelNameValue}.
 	 * @param ctx the parse tree
 	 */
-	void enterNameValue(LevelGrammarParser.NameValueContext ctx);
+	void enterLevelNameValue(LevelGrammarParser.LevelNameValueContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LevelGrammarParser#nameValue}.
+	 * Exit a parse tree produced by {@link LevelGrammarParser#levelNameValue}.
 	 * @param ctx the parse tree
 	 */
-	void exitNameValue(LevelGrammarParser.NameValueContext ctx);
+	void exitLevelNameValue(LevelGrammarParser.LevelNameValueContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LevelGrammarParser#levelConfigs}.
 	 * @param ctx the parse tree

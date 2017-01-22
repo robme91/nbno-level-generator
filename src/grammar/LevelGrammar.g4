@@ -12,8 +12,8 @@ Separator: ',';
 WS : [ \t\n\r]+ -> skip ; // skip witepsaces tabs and linebreaks
 
 //name of the generating level
-levelName: 'levelName:' nameValue;
-nameValue: ALPHABET;
+levelName: 'levelName:' levelNameValue;
+levelNameValue: ALPHABET;
 
 //the level configuration like playing time or music etc.
 levelConfigs: 'levelConfiguration' ObjectBeginn configs ObjectEnd ;
@@ -42,7 +42,7 @@ enemyAttribute: enemyName Separator speed Separator attackTarget Separator damag
 enemyName: 'name:' enemyNameValue;
 enemyNameValue: ALPHABET;
 attackTarget: 'attackTarget:' attackTargetValue;
-attackTargetValue:'drink' | 'playerSpeed';
+attackTargetValue:'DRINK' | 'PLAYER_SPEED';
 damage: 'damage:' damageValue;
 damageValue: DIGITS;
 ki: 'ki:' kiValue;

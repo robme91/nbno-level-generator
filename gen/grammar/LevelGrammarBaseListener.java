@@ -40,13 +40,13 @@ public class LevelGrammarBaseListener implements LevelGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNameValue(LevelGrammarParser.NameValueContext ctx) { }
+	@Override public void enterLevelNameValue(LevelGrammarParser.LevelNameValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNameValue(LevelGrammarParser.NameValueContext ctx) { }
+	@Override public void exitLevelNameValue(LevelGrammarParser.LevelNameValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

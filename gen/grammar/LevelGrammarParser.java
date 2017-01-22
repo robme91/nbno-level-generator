@@ -23,7 +23,7 @@ public class LevelGrammarParser extends Parser {
 		T__24=25, T__25=26, ALPHABET=27, DIGITS=28, ObjectBeginn=29, ObjectEnd=30, 
 		Separator=31, WS=32;
 	public static final int
-		RULE_file = 0, RULE_levelName = 1, RULE_nameValue = 2, RULE_levelConfigs = 3, 
+		RULE_file = 0, RULE_levelName = 1, RULE_levelNameValue = 2, RULE_levelConfigs = 3, 
 		RULE_configs = 4, RULE_levelTime = 5, RULE_levelTimeValue = 6, RULE_player = 7, 
 		RULE_playerAttributes = 8, RULE_speed = 9, RULE_speedValue = 10, RULE_drinkSpeed = 11, 
 		RULE_drinkSpeedValue = 12, RULE_beerLevel = 13, RULE_beerLevelValue = 14, 
@@ -34,7 +34,7 @@ public class LevelGrammarParser extends Parser {
 		RULE_map = 29, RULE_mapValue = 30, RULE_row = 31, RULE_block = 32, RULE_building = 33, 
 		RULE_character = 34;
 	public static final String[] ruleNames = {
-		"file", "levelName", "nameValue", "levelConfigs", "configs", "levelTime", 
+		"file", "levelName", "levelNameValue", "levelConfigs", "configs", "levelTime", 
 		"levelTimeValue", "player", "playerAttributes", "speed", "speedValue", 
 		"drinkSpeed", "drinkSpeedValue", "beerLevel", "beerLevelValue", "enemies", 
 		"enemy", "mapRepresentation", "enemyAttribute", "enemyName", "enemyNameValue", 
@@ -46,7 +46,7 @@ public class LevelGrammarParser extends Parser {
 	private static final String[] _LITERAL_NAMES = {
 		null, "'levelName:'", "'levelConfiguration'", "'levelTime:'", "'player'", 
 		"'speed:'", "'drinkSpeed:'", "'beerLevel:'", "'enemies'", "'name:'", "'attackTarget:'", 
-		"'drink'", "'playerSpeed'", "'damage:'", "'ki:'", "'('", "'|'", "')'", 
+		"'DRINK'", "'PLAYER_SPEED'", "'damage:'", "'ki:'", "'('", "'|'", "')'", 
 		"'map'", "'H'", "'<'", "'>'", "'^'", "'V'", "'S'", "'P'", "'X'", null, 
 		null, "'{'", "'}'", "','"
 	};
@@ -173,8 +173,8 @@ public class LevelGrammarParser extends Parser {
 	}
 
 	public static class LevelNameContext extends ParserRuleContext {
-		public NameValueContext nameValue() {
-			return getRuleContext(NameValueContext.class,0);
+		public LevelNameValueContext levelNameValue() {
+			return getRuleContext(LevelNameValueContext.class,0);
 		}
 		public LevelNameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -204,7 +204,7 @@ public class LevelGrammarParser extends Parser {
 			setState(77);
 			match(T__0);
 			setState(78);
-			nameValue();
+			levelNameValue();
 			}
 		}
 		catch (RecognitionException re) {
@@ -218,30 +218,30 @@ public class LevelGrammarParser extends Parser {
 		return _localctx;
 	}
 
-	public static class NameValueContext extends ParserRuleContext {
+	public static class LevelNameValueContext extends ParserRuleContext {
 		public TerminalNode ALPHABET() { return getToken(LevelGrammarParser.ALPHABET, 0); }
-		public NameValueContext(ParserRuleContext parent, int invokingState) {
+		public LevelNameValueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_nameValue; }
+		@Override public int getRuleIndex() { return RULE_levelNameValue; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LevelGrammarListener ) ((LevelGrammarListener)listener).enterNameValue(this);
+			if ( listener instanceof LevelGrammarListener ) ((LevelGrammarListener)listener).enterLevelNameValue(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LevelGrammarListener ) ((LevelGrammarListener)listener).exitNameValue(this);
+			if ( listener instanceof LevelGrammarListener ) ((LevelGrammarListener)listener).exitLevelNameValue(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LevelGrammarVisitor ) return ((LevelGrammarVisitor<? extends T>)visitor).visitNameValue(this);
+			if ( visitor instanceof LevelGrammarVisitor ) return ((LevelGrammarVisitor<? extends T>)visitor).visitLevelNameValue(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final NameValueContext nameValue() throws RecognitionException {
-		NameValueContext _localctx = new NameValueContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_nameValue);
+	public final LevelNameValueContext levelNameValue() throws RecognitionException {
+		LevelNameValueContext _localctx = new LevelNameValueContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_levelNameValue);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{

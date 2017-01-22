@@ -3,24 +3,24 @@ levelConfiguration {
     levelTime: 60
 }
 player {
-    speed: 2,
+    speed: 50,
     drinkSpeed: 4,
     beerLevel: 100
 }
 enemies {
     1 {
         name: Schnorrer,
-        speed: 1,
-        attackTarget: drink,
-        damage: 10,
+        speed: 40,
+        attackTarget: DRINK,
+        damage: 30,
         ki: (10|30)
     },
     2 {
         name: Polizist,
-        speed: 2,
-        attackTarget: playerSpeed,
-        damage: 20,
-        ki: (30|40)
+        speed: 25,
+        attackTarget: PLAYER_SPEED,
+        damage: 70,
+        ki: (24|40)
     }
 }
 map {

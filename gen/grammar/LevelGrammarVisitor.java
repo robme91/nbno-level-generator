@@ -23,11 +23,11 @@ public interface LevelGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLevelName(LevelGrammarParser.LevelNameContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LevelGrammarParser#nameValue}.
+	 * Visit a parse tree produced by {@link LevelGrammarParser#levelNameValue}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNameValue(LevelGrammarParser.NameValueContext ctx);
+	T visitLevelNameValue(LevelGrammarParser.LevelNameValueContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LevelGrammarParser#levelConfigs}.
 	 * @param ctx the parse tree
