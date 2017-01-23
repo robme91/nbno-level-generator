@@ -93,7 +93,7 @@ public class LevelGenerator extends LevelGrammarBaseListener {
             throw new IllegalArgumentException(
                     GeneratorUtils.getFormattedErrorMessage("Level name is to long!", ctx.getStart()));
         }
-        this.levelName = name;
+        this.levelName = name.substring(0,1).toUpperCase() + name.substring(1);;
     }
 
     @Override
@@ -271,7 +271,7 @@ public class LevelGenerator extends LevelGrammarBaseListener {
      * @param y The y coordinate of the house
      */
     private void generateHouseString(final int x, final int y){
-        final String str = "this.blocks.add(new House(" + x + ", " + y + "));\n";
+        final String str = "this.blocks.add(new House(" + x + ", " + y + "));";
         houseStrings.add(str);
     }
 
@@ -282,7 +282,7 @@ public class LevelGenerator extends LevelGrammarBaseListener {
      * @param y The y coordinate of the house
      */
     private void generateStreetString(final int x, final int y){
-        final String str = "this.blocks.add(new Street(" + x + ", " + y + "));\n";
+        final String str = "this.blocks.add(new Street(" + x + ", " + y + "));";
         streetStrings.add(str);
     }
 
@@ -293,7 +293,7 @@ public class LevelGenerator extends LevelGrammarBaseListener {
      * @param y The y coordinate of the Spaeti
      */
     private void generateSpaetiString(final int x, final int y, final String direction){
-        final String str = "this.blocks.add(new Spaeti(" + x + ", " + y + ", " + "Enums.Direction." + direction + "));\n";
+        final String str = "this.blocks.add(new Spaeti(" + x + ", " + y + ", " + "Enums.Direction." + direction + "));";
         spaetiStrings.add(str);
     }
 
@@ -313,7 +313,7 @@ public class LevelGenerator extends LevelGrammarBaseListener {
         final String damage = enemy.enemyAttribute().damage().damageValue().getText();
         final String str = "this.npcs.add(new NPC(" + x + ", " + y + ", " + speed + ", "
                 + "\"" + name + "\"" + ", " + sight + ", " + intelligence + ", " + target + ", " + damage
-                + "));\n";
+                + "));";
         enemyStrings.add(str);
     }
 
@@ -359,8 +359,7 @@ public class LevelGenerator extends LevelGrammarBaseListener {
 
     private static void writeFile(){
         try {
-            final String upperLevelName = levelName.substring(0,1).toUpperCase() + levelName.substring(1);
-            BufferedWriter bw = new BufferedWriter(new FileWriter("generatedlevels/" + upperLevelName + ".java"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("generatedlevels/" + levelName + ".java"));
             for (final String line : generateLevelClass()) {
                 bw.write(line);
                 bw.write(System.getProperty("line.separator"));
