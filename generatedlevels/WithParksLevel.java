@@ -7,10 +7,10 @@ import objects.Player;
 import objects.Street;
 import objects.Park;
 /** Generated Level class by LevelGenerator from .nbno file*/
-public class TestLevel extends AbstractLevel {
-public TestLevel() {
+public class WithParksLevel extends AbstractLevel {
+public WithParksLevel() {
 super();
-this.levelName = "TestLevel";
+this.levelName = "WithParksLevel";
 this.initialLevelTime = 60;
 this.player = new Player(11, 19, 50f, 4f, 100f);
 this.npcs.add(new NPC(16, 1, 40f, "Schnorrer", 10, 30, Enums.AttackTarget.DRINK, 30));

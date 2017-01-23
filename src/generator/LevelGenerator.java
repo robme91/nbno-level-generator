@@ -39,6 +39,7 @@ public class LevelGenerator extends LevelGrammarBaseListener {
     private static List<String> houseStrings = new ArrayList<>();
     private static List<String> spaetiStrings = new ArrayList<>();
     private static List<String> streetStrings = new ArrayList<>();
+    private static List<String> parkStrings = new ArrayList<>();
     private static List<String> enemyStrings = new ArrayList<>();
     private static String playerString;
 
@@ -233,6 +234,9 @@ public class LevelGenerator extends LevelGrammarBaseListener {
                     case GeneratorUtils.STREET:
                         generateStreetString(xPos, yPos);
                         break;
+                    case GeneratorUtils.PARK:
+                        generateParkString(xPos, yPos);
+                        break;
                     case GeneratorUtils.SPAETI_LEFT:
                         generateSpaetiString(xPos, yPos, "LEFT");
                         break;
@@ -278,12 +282,23 @@ public class LevelGenerator extends LevelGrammarBaseListener {
     /**
      * Generates a String for the java class, where the Street is added to a set.
      * Add the string to the appropriate string list.
-     * @param x The x coordinate of the house
-     * @param y The y coordinate of the house
+     * @param x The x coordinate of the Street
+     * @param y The y coordinate of the Street
      */
     private void generateStreetString(final int x, final int y){
         final String str = "this.blocks.add(new Street(" + x + ", " + y + "));";
         streetStrings.add(str);
+    }
+
+    /**
+     * Generates a String for the java class, where the Park is added to a set.
+     * Add the string to the appropriate string list.
+     * @param x The x coordinate of the Park
+     * @param y The y coordinate of the Park
+     */
+    private void generateParkString(final int x, final int y){
+        final String str = "this.blocks.add(new Park(" + x + ", " + y + "));";
+        parkStrings.add(str);
     }
 
     /**
@@ -300,8 +315,8 @@ public class LevelGenerator extends LevelGrammarBaseListener {
     /**
      * Generates a String for the java class, where the enemy is added to a set.
      * Add the string to the appropriate string list.
-     * @param x The x coordinate of the house
-     * @param y The y coordinate of the house
+     * @param x The x coordinate of the enemy
+     * @param y The y coordinate of the enemy
      */
     private void generateEnemyString(final int mapRep, final int x, final int y){
         final LevelGrammarParser.EnemyContext enemy = enemyClasses.get(mapRep);
@@ -339,6 +354,7 @@ public class LevelGenerator extends LevelGrammarBaseListener {
         result.add("import objects.NPC;");
         result.add("import objects.Player;");
         result.add("import objects.Street;");
+        result.add("import objects.Park;");
         result.add("/** Generated Level class by LevelGenerator from .nbno file*/");
         result.add("public class " + levelName + " extends AbstractLevel {");
         result.add("public " + levelName + "() {");
@@ -350,6 +366,7 @@ public class LevelGenerator extends LevelGrammarBaseListener {
         result.addAll(enemyStrings);
         result.addAll(houseStrings);
         result.addAll(streetStrings);
+        result.addAll(parkStrings);
         result.addAll(spaetiStrings);
         result.add("}");
         result.add("}");

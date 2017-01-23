@@ -10,7 +10,7 @@ public class GeneratorUtils {
     /**These constants represents the dsl possibilties for the level map*/
     public static final String HOUSE = "H";
     public static final String STREET = "S";
-//    public static final String PARK = "P";
+    public static final String PARK = "P";
     public static final String SPAETI_LEFT = "<";
     public static final String SPAETI_RIGHT = ">";
     public static final String SPAETI_UP = "^";
