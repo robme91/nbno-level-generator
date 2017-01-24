@@ -341,8 +341,8 @@ public class LevelGenerator extends LevelGrammarBaseListener {
         final String speed = player.speed().speedValue().getText() + "f";
         final String drinkSpeed = player.drinkSpeed().drinkSpeedValue().getText() + "f";
         final String beerLvl = player.beerLevel().beerLevelValue().getText() + "f";
-        playerString = "this.player = new Player(" + x + ", " + y + ", " + speed + ", " + drinkSpeed
-                + ", " + beerLvl + ");";
+        playerString = "this.player = new Player(" + x + ", " + y + ", " + speed + ", " + beerLvl
+                + ", " + drinkSpeed + ");";
     }
 
     private static List<String> generateLevelClass(){
