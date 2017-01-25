@@ -5,9 +5,14 @@ import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.Recognizer;
 
 /**
- * Created by Robin on 20.01.2017.
+ * Created by Robin
+ * This is an ErrorListener to get Java Exceptions, if lexing and parsing a level
+ * file, does not accords with the level grammar rules.
  */
 public class LevelErrorListener extends BaseErrorListener {
+    /**
+     * Create an Instance of this Error Listener
+     */
     public static LevelErrorListener INSTANCE = new LevelErrorListener();
 
     @Override

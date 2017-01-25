@@ -1,5 +1,5 @@
 grammar LevelGrammar;
-
+// this grammar pretends a level .nbno file
 file : levelName levelConfigs player enemies map EOF;
 
 // helper definitions
@@ -8,7 +8,6 @@ DIGITS : [0-9]+;
 ObjectBeginn:'{';
 ObjectEnd: '}';
 Separator: ',';
-//WS :  ( ' ' | '\t' | '\r' | '\n') -> channel(HIDDEN) ; //hide witepsaces tabs and linebreaks
 WS : [ \t\n\r]+ -> skip ; // skip witepsaces tabs and linebreaks
 
 //name of the generating level
@@ -50,12 +49,10 @@ kiValue: '(' visualRange '|' intelligence ')';
 visualRange: DIGITS;
 intelligence: DIGITS;
 
-//the map of the level includes the map objects play and enemy start positions
-// check when parsing that maps have always the same size (800*640 px) while each mapValue is a 32*32px block.
-// so there must be 20 rows and each row got 25 mapvalues
+//the map of the level includes the map objects player and enemy start positions
 map: 'map' ObjectBeginn mapValue ObjectEnd;
 mapValue: row (row)*;
 row: block (Separator block)*;
 block: building | character ;
 building:'H' | '<' | '>' | '^' | 'V' | 'S' | 'P'; // H- House, arrow- Spaeti incl direction, S- Street, P-park
-character: 'X' | DIGITS; // X- player spawn, digits - enemy of appropriate enemyclass
+character: 'X' | DIGITS; // X- player spawn, digits - enemy spawns of appropriate enemyclass

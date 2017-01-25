@@ -1,10 +1,8 @@
 package generator;
 
-import com.sun.deploy.util.StringUtils;
 import grammar.LevelGrammarBaseListener;
 import grammar.LevelGrammarLexer;
 import grammar.LevelGrammarParser;
-import org.antlr.v4.runtime.ANTLRErrorListener;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
@@ -17,7 +15,9 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Created by Robin on 14.01.2017.
+ * This level generator, creates a Java Class from a .nbno file.
+ * It lexes and parses the .nbno file and check for semantic errors.
+ * Throws exception if something went wrong. Prints out if java level class is successful generated.
  */
 public class LevelGenerator extends LevelGrammarBaseListener {
 
@@ -43,6 +43,12 @@ public class LevelGenerator extends LevelGrammarBaseListener {
     private static List<String> enemyStrings = new ArrayList<>();
     private static String playerString;
 
+    /**
+     * Starts the level generator parses the level file and write in the new java level class.
+     * The .nbno file that shall be taken, must exist in the levelfiles directory and its name must be given to
+     * the console when asking the user for it.
+     * @param args Nor args used for this class
+     */
     public static void main(String[] args)  {
         try {
             getInputPath();
@@ -55,6 +61,9 @@ public class LevelGenerator extends LevelGrammarBaseListener {
         }
     }
 
+    /**
+     * Create the input path for the parsing nbno file. Uses the user input for that.
+     */
     private static void getInputPath(){
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter filename: ");
@@ -62,6 +71,10 @@ public class LevelGenerator extends LevelGrammarBaseListener {
         levelFilePath = "levelfiles/" + fileName;
     }
 
+    /**
+     * Parses the nbno file. Looking for semantic errors and build the string lists.
+     * @throws IOException if error occurred
+     */
     private static void parseFile() throws IOException {
         // Get gamefield lexer
         LevelGrammarLexer lexer = new LevelGrammarLexer(new ANTLRInputStream(new FileReader(levelFilePath)));
@@ -85,7 +98,9 @@ public class LevelGenerator extends LevelGrammarBaseListener {
         walker.walk(listener, fileContext);
     }
 
-    /*Following methods check all values if they are allowed*/
+    /**
+     * Following methods check all values and if they use allowed semantic.
+     **/
 
     @Override
     public void enterLevelNameValue(LevelGrammarParser.LevelNameValueContext ctx) {
@@ -94,7 +109,7 @@ public class LevelGenerator extends LevelGrammarBaseListener {
             throw new IllegalArgumentException(
                     GeneratorUtils.getFormattedErrorMessage("Level name is to long!", ctx.getStart()));
         }
-        this.levelName = name.substring(0,1).toUpperCase() + name.substring(1);;
+        levelName = name.substring(0,1).toUpperCase() + name.substring(1);
     }
 
     @Override
@@ -191,7 +206,11 @@ public class LevelGenerator extends LevelGrammarBaseListener {
         }
     }
 
-    /*following methods save the data which must be used later to create class*/
+    /**
+     * following methods save the data and creates string representations
+     * which must be used later to create class.
+     **/
+
     @Override
     public void enterConfigs(LevelGrammarParser.ConfigsContext ctx) {
         levelConfigs = ctx;
@@ -345,6 +364,10 @@ public class LevelGenerator extends LevelGrammarBaseListener {
                 + ", " + drinkSpeed + ");";
     }
 
+    /**
+     * Generates the full java class as a string representation.
+     * @return The creates java class as a String
+     */
     private static List<String> generateLevelClass(){
         final List<String> result = new ArrayList<>();
         result.add("package level;");
@@ -374,6 +397,9 @@ public class LevelGenerator extends LevelGrammarBaseListener {
         return result;
     }
 
+    /**
+     * Writes the created strings into the java file named by the levelname attribute from the nbno file.
+     */
     private static void writeFile(){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("generatedlevels/" + levelName + ".java"));

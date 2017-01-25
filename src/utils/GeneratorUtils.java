@@ -3,11 +3,11 @@ package utils;
 import org.antlr.v4.runtime.Token;
 
 /**
- * Created by Robin on 21.01.2017.
+ * This is a helper class to get some logic and and knowhow for the level generator.
  */
 public class GeneratorUtils {
 
-    /**These constants represents the dsl possibilties for the level map*/
+    /**These constants represents the dsl possibilities for the level map*/
     public static final String HOUSE = "H";
     public static final String STREET = "S";
     public static final String PARK = "P";
@@ -17,15 +17,6 @@ public class GeneratorUtils {
     public static final String SPAETI_DOWN = "V";
     public static final String PLAYER = "X";
 
-
-    /**
-     * Returns true if given string contains a number.
-     * @param str The String that contains a number or not
-     * @return True if the string is a number
-     */
-    public static boolean isNumber(final String str){
-        return str.matches("\\d+");
-    }
 
     /**
      * Returns the a String with the given Message, following by line and column number of the start token
