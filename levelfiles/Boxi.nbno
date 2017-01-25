@@ -1,0 +1,47 @@
+levelName: Boxi
+levelConfiguration {
+    levelTime: 180
+}
+player {
+    speed: 50,
+    drinkSpeed: 4,
+    beerLevel: 100
+}
+enemies {
+    1 {
+        name: Schnorrer,
+        speed: 40,
+        attackTarget: DRINK,
+        damage: 10,
+        ki: (10|30)
+    },
+    2 {
+        name: Polizist,
+        speed: 25,
+        attackTarget: PLAYER_SPEED,
+        damage: 70,
+        ki: (24|40)
+    }
+}
+map {
+    H,H,S,S,S,S,2,S,S,S,S,S,S,S,H,H,H,H,S,H,H,S,H,H,H
+    S,S,S,H,H,>,S,H,H,H,H,H,^,S,S,S,S,V,S,H,H,S,H,H,H
+    >,S,H,H,H,H,S,H,H,H,H,H,H,S,H,H,S,S,S,H,H,S,<,H,H
+    H,1,H,H,H,H,S,H,H,H,H,H,H,S,H,H,H,H,S,S,S,S,S,H,H
+    H,S,H,H,H,H,S,H,H,H,H,H,H,S,H,H,H,H,P,S,P,P,S,2,S
+    >,S,H,H,H,H,S,H,H,V,H,H,H,S,H,H,H,H,P,S,P,P,P,P,^
+    H,S,H,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,P,P,H
+    S,S,S,S,<,H,S,P,P,P,P,P,P,S,<,H,H,S,H,H,H,S,S,P,H
+    >,S,H,H,H,H,S,P,P,P,P,P,P,S,H,H,H,S,H,H,H,>,S,S,H
+    H,1,H,H,H,H,S,P,P,P,P,P,P,S,H,H,H,S,H,H,H,H,H,S,H
+    H,S,H,H,H,H,S,P,P,P,P,P,P,S,H,H,H,S,H,H,H,H,H,S,S
+    H,S,H,H,H,>,S,P,P,P,P,P,P,S,H,H,H,S,<,H,H,H,H,S,P
+    >,S,S,S,S,S,S,S,S,S,S,S,S,X,S,S,S,S,S,S,S,S,S,2,H
+    H,S,H,H,H,H,S,H,H,^,H,H,H,S,H,^,H,S,H,H,S,H,>,S,H
+    H,1,H,H,H,H,S,H,H,H,H,H,H,S,H,H,H,S,H,H,S,H,H,S,H
+    H,S,H,H,H,H,S,H,H,H,H,H,>,S,H,H,H,S,H,H,S,H,H,S,H
+    >,S,H,H,H,V,S,H,H,H,H,H,H,S,H,H,H,S,H,H,S,H,H,S,<
+    S,1,S,S,S,S,S,H,H,H,H,H,H,S,H,H,H,S,H,H,S,H,H,S,H
+    H,S,P,P,P,P,S,S,S,S,S,S,S,S,H,H,H,S,H,V,S,H,H,S,H
+    H,S,P,P,H,P,S,<,H,H,H,H,H,S,S,S,S,S,S,S,S,S,S,S,H
+}

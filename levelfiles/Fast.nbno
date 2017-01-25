@@ -1,11 +1,11 @@
-levelName: Fast
+levelName: FastLose
 levelConfiguration {
-    levelTime: 10
+    levelTime: 40
 }
 player {
     speed: 50,
-    drinkSpeed: 4,
-    beerLevel: 100
+    drinkSpeed: 6,
+    beerLevel: 30
 }
 enemies {
     1 {
